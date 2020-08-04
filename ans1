@@ -1,0 +1,7 @@
+##My solution
+
+select count(distinct a1.player_id)/(select count(distinct player_id) from activity)
+from activity a1
+join activity a2
+on a1.player_id=a2.player_id
+where a1.event_date=a2.event_date + interval 1 day
